@@ -1,307 +1,287 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>İletişim | Aziz Karagülmez</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Contact | Aziz Karagülmez</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* İletişim sayfası için ek stiller */
-        .page-header {
-            height: 50vh;
-            background: var(--gradient);
-            color: white;
-            display: flex;
-            flex-direction: column;
-            position: relative;
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #0f172a;
+            color: #f3f4f6;
+            font-family: 'Poppins', sans-serif;
         }
-        
-        .page-header::before {
-            content: '';
-            position: absolute;
+
+        .navbar {
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            background: url('images/pattern.png');
-            opacity: 0.1;
-        }
-        
-        .header-content {
-            flex: 1;
+            padding: 1.5rem;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            text-align: center;
-            padding: 0 20px;
-            position: relative;
-            z-index: 1;
+            z-index: 3;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
         }
         
-        .contact-container {
-            padding: 80px 0;
-        }
-        
-        .contact-intro {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 60px;
-        }
-        
-        .contact-intro p {
-            color: var(--gray-color);
-            font-size: 1.1rem;
-            margin-bottom: 20px;
-        }
-        
-        .contact-methods {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        
-        .contact-card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        
-        .contact-card:hover {
-            transform: translateY(-10px);
-        }
-        
-        .contact-card-icon {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            background: var(--light-color);
+        .navbar nav ul {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 2rem;
-            color: var(--primary-color);
-            transition: all 0.3s;
+            gap: 3rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
         
-        .contact-card:hover .contact-card-icon {
-            background: var(--gradient);
-            color: white;
-        }
-        
-        .contact-card h3 {
-            margin-bottom: 15px;
-            font-size: 1.3rem;
-        }
-        
-        .contact-card p {
-            color: var(--gray-color);
-            margin-bottom: 20px;
-        }
-        
-        .contact-link {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            color: var(--primary-color);
+        .navbar nav ul li a {
+            color: #d1d5db;
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s;
-            border: 1px solid var(--primary-color);
-            padding: 8px 20px;
-            border-radius: 30px;
-        }
-        
-        .contact-link:hover {
-            background: var(--primary-color);
-            color: white;
-        }
-        
-        .social-profiles {
-            background: white;
-            padding: 60px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-        
-        .social-profiles h3 {
-            margin-bottom: 40px;
-            font-size: 1.5rem;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
             position: relative;
-            padding-bottom: 10px;
-            display: inline-block;
+            padding: 0.5rem 1rem;
         }
         
-        .social-profiles h3::after {
+        .navbar nav ul li a::after {
             content: '';
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 40px;
-            height: 3px;
-            background: var(--primary-color);
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(to right, #10b981, #059669);
+            transition: width 0.3s ease;
         }
         
+        .navbar nav ul li a:hover::after,
+        .navbar nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        .navbar nav ul li a:hover {
+            color: #f3f4f6;
+        }
+
+        .contact-container {
+            padding-top: 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+
+        .contact-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .contact-intro h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(to right, #10b981, #059669);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .contact-intro p {
+            color: #d1d5db;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .contact-card {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(16, 185, 129, 0.3);
+        }
+
+        .contact-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(to right, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .contact-card h3 {
+            color: #f3f4f6;
+            margin-bottom: 1rem;
+        }
+
+        .contact-card p {
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-link {
+            color: #10b981;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            color: #059669;
+        }
+
+        .social-section {
+            background: rgba(15, 23, 42, 0.5);
+            padding: 3rem 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            border: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .social-section h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(to right, #10b981, #059669);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
         .social-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 2rem;
             max-width: 800px;
             margin: 0 auto;
         }
-        
+
         .social-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
+            text-decoration: none;
+            color: #f3f4f6;
+            transition: all 0.3s ease;
         }
-        
-        .social-icon {
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            background: var(--light-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            color: var(--primary-color);
-            transition: all 0.3s;
-        }
-        
-        .social-item:hover .social-icon {
-            background: var(--gradient);
-            color: white;
+
+        .social-item:hover {
             transform: translateY(-5px);
         }
-        
-        .social-item span {
-            font-weight: 500;
+
+        .social-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #10b981;
+        }
+
+        .social-item:hover .social-icon {
+            color: #059669;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+            }
+            
+            .navbar nav ul {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .contact-container {
+                padding-top: 80px;
+            }
+
+            .contact-intro h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="page-header">
-        <div class="navbar">
-            <div class="logo">AZİZ KARAGÜLMEZ</div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Ana Sayfa</a></li>
-                    <li><a href="skills.html">Yetenekler</a></li>
-                    <li><a href="projects.html">Projeler</a></li>
-                    <li><a href="contact.html" class="active">İletişim</a></li>
-                </ul>
-            </nav>
-        </div>
-        <div class="header-content">
-            <h1>İletişim</h1>
-            <p>Bana ulaşın ve iletişimde kalalım</p>
-        </div>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section class="contact-container">
-        <div class="container">
-            <div class="contact-intro">
-                <p>Projelere katkıda bulunmak, işbirliği yapmak veya benimle iletişime geçmek için aşağıdaki iletişim yöntemlerini kullanabilirsiniz. Size en kısa sürede dönmeye çalışacağım.</p>
+    <div class="contact-container">
+        <div class="contact-intro">
+            <h1>Contact</h1>
+            <p>You can use the following contact methods to contribute to projects, collaborate, or get in touch with me.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email</h3>
+                <p>My email address for job offers and collaborations</p>
+                <a href="mailto:azizkaragulmez07@gmail.com" class="contact-link">
+                    <i class="fas fa-arrow-right"></i>
+                    azizkaragulmez07@gmail.com
+                </a>
             </div>
-            
-            <div class="contact-methods">
-                <div class="contact-card">
-                    <div class="contact-card-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3>E-posta</h3>
-                    <p>E-posta yoluyla doğrudan benimle iletişime geçebilirsiniz. Sorularınızı, projelerinizi veya işbirliği tekliflerinizi bekliyorum.</p>
-                    <a href="mailto:aziz@example.com" class="contact-link">
-                        <i class="fas fa-paper-plane"></i> E-posta Gönder
-                    </a>
+
+        
+
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone"></i>
                 </div>
-                
-                <div class="contact-card">
-                    <div class="contact-card-icon">
-                        <i class="fab fa-linkedin"></i>
-                    </div>
-                    <h3>LinkedIn</h3>
-                    <p>Profesyonel iletişim ve iş fırsatları için LinkedIn profilimden bana ulaşabilirsiniz.</p>
-                    <a href="https://linkedin.com/in/azizkaragulmez" target="_blank" class="contact-link">
-                        <i class="fas fa-user-plus"></i> Bağlantı Kur
-                    </a>
-                </div>
-                
-                <div class="contact-card">
-                    <div class="contact-card-icon">
-                        <i class="fab fa-github"></i>
-                    </div>
-                    <h3>GitHub</h3>
-                    <p>Kodlarımı, projelerimi inceleyebilir ve açık kaynak çalışmalarıma GitHub üzerinden katkıda bulunabilirsiniz.</p>
-                    <a href="https://github.com/azizk" target="_blank" class="contact-link">
-                        <i class="fas fa-code-branch"></i> Profili Görüntüle
-                    </a>
-                </div>
-            </div>
-            
-            <div class="social-profiles">
-                <h3>Sosyal Medya</h3>
-                <div class="social-grid">
-                    <a href="https://github.com/azizk" target="_blank" class="social-item">
-                        <div class="social-icon">
-                            <i class="fab fa-github"></i>
-                        </div>
-                        <span>GitHub</span>
-                    </a>
-                    
-                    <a href="https://linkedin.com/in/azizkaragulmez" target="_blank" class="social-item">
-                        <div class="social-icon">
-                            <i class="fab fa-linkedin"></i>
-                        </div>
-                        <span>LinkedIn</span>
-                    </a>
-                    
-                    <a href="mailto:aziz@example.com" class="social-item">
-                        <div class="social-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <span>E-posta</span>
-                    </a>
-                    
-                    <a href="https://instagram.com/azizkaragulmez" target="_blank" class="social-item">
-                        <div class="social-icon">
-                            <i class="fab fa-instagram"></i>
-                        </div>
-                        <span>Instagram</span>
-                    </a>
-                </div>
+                <h3>Telefon</h3>
+                <p>In case of emergency you can reach us by phone.</p>
+                <a href="tel:+90539945****" class="contact-link">
+                    <i class="fas fa-arrow-right"></i>
+                    +90 539 945 ** **
+                </a>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">AZİZ KARAGÜLMEZ</div>
-                <div class="footer-social">
-                    <a href="https://github.com/azizk" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://linkedin.com/in/azizkaragulmez" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="mailto:aziz@example.com"><i class="fas fa-envelope"></i></a>
-                    <a href="https://instagram.com/azizkaragulmez" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2023 Aziz Karagülmez | Tüm Hakları Saklıdır</p>
+        <div class="social-section">
+            <h2>Social Media</h2>
+            <div class="social-grid">
+                <a href="https://github.com/azizkaragulmez" class="social-item" target="_blank">
+                    <i class="fab fa-github social-icon"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/aziz-karag%C3%BClmez-612762199/" class="social-item" target="_blank">
+                    <i class="fab fa-linkedin social-icon"></i>
+                    <span>LinkedIn</span>
+                </a>
+              
+                <a href="https://www.instagram.com/krglmzzz/" class="social-item" target="_blank">
+                    <i class="fab fa-instagram social-icon"></i>
+                    <span>Instagram</span>
+                </a>
             </div>
         </div>
-    </footer>
-
-    <script src="script.js"></script>
+    </div>
 </body>
 </html>

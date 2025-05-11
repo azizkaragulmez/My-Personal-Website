@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hakkımda | Aziz Karagülmez</title>
+    <title>About | Aziz Karagülmez</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body, html {
             height: 100%;
             margin: 0;
             padding: 0;
-            background: #111827;
+            background: #0f172a;
             color: #f3f4f6;
             font-family: 'Poppins', sans-serif;
         }
@@ -25,7 +25,7 @@
             justify-content: center;
             align-items: center;
             z-index: 3;
-            background: rgba(17, 24, 39, 0.8);
+            background: rgba(15, 23, 42, 0.8);
             backdrop-filter: blur(10px);
         }
         
@@ -53,7 +53,7 @@
             height: 2px;
             bottom: -2px;
             left: 0;
-            background: linear-gradient(to right, #8b5cf6, #6366f1);
+            background: linear-gradient(to right, #10b981, #059669);
             transition: width 0.3s ease;
         }
         
@@ -70,21 +70,166 @@
             max-width: 1200px;
             margin: 100px auto 0;
             padding: 2rem;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 0.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .education-certificates {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .timeline-section {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .timeline-section h2 {
+            color: #10b981;
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
             display: flex;
-            gap: 4rem;
-            align-items: flex-start;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .timeline-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, #10b981, #059669);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, #10b981, #059669);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 0;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background: #10b981;
+            border: 2px solid #059669;
+        }
+
+        .timeline-item:last-child {
+            padding-bottom: 0;
+        }
+
+        .timeline-date {
+            color: #059669;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            color: #f3f4f6;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-subtitle {
+            color: #d1d5db;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .timeline-content {
+            color: #9ca3af;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .certificate-grid {
+            display: grid;
+            gap: 1.5rem;
+        }
+
+        .certificate-item {
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 0.8rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(16, 185, 129, 0.1);
+        }
+
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .certificate-title {
+            color: #f3f4f6;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .certificate-issuer {
+            color: #059669;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .certificate-date {
+            color: #9ca3af;
+            font-size: 0.8rem;
         }
 
         .about-image {
             flex: 1;
-            max-width: 400px;
+            max-width: 300px;
         }
 
         .about-image img {
             width: 100%;
             height: auto;
             border-radius: 15px;
-            box-shadow: 0 0 30px rgba(99, 102, 241, 0.2);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.2);
             object-fit: cover;
         }
 
@@ -95,7 +240,7 @@
         .about-title {
             font-size: 2.5rem;
             margin-bottom: 2rem;
-            background: linear-gradient(to right, #8b5cf6, #6366f1);
+            background: linear-gradient(to right, #10b981, #059669);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -112,7 +257,7 @@
         }
 
         .about-section h3 {
-            color: #6366f1;
+            color: #10b981;
             margin-bottom: 1rem;
             font-size: 1.3rem;
         }
@@ -125,8 +270,8 @@
         }
 
         .skill-tag {
-            background: rgba(99, 102, 241, 0.1);
-            color: #6366f1;
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
             padding: 0.5rem 1rem;
             border-radius: 20px;
             font-size: 0.9rem;
@@ -146,14 +291,60 @@
         }
 
         .info-item i {
-            color: #6366f1;
+            color: #10b981;
             font-size: 1.2rem;
+        }
+
+        .logo-img {
+            width: 24px;
+            height: 24px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .section-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .patika-logo {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .patika-logo-small {
+            width: 30px;
+            height: 30px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 758px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            .education-certificates {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
             .about-container {
-                flex-direction: column;
-                align-items: center;
+                padding: 1rem;
+            }
+
+            .about-grid {
+                gap: 2rem;
             }
 
             .about-image {
@@ -181,55 +372,102 @@
     <header class="navbar">
         <nav>
             <ul>
-                <li><a href="index.html">Ana Sayfa</a></li>
-                <li><a href="about.html" class="active">Hakkımda</a></li>
-                <li><a href="skills.html">Yetenekler</a></li>
-                <li><a href="projects.html">Projeler</a></li>
-                <li><a href="contact.html">İletişim</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <div class="about-container">
-        <div class="about-image">
-            <img src="about-photo.jpg" alt="Aziz Karagülmez">
-        </div>
-        <div class="about-content">
-            <h1 class="about-title">Hakkımda</h1>
-            <div class="about-section">
-                <p class="about-text">
-                    My name is Aziz Karagülmez, and I am currently a third-year Computer Engineering student. I focus on software development, particularly in Java-based desktop applications and mobile application development using Flutter. Throughout my academic journey, I have aimed to strengthen my theoretical knowledge through hands-on projects.
-
-                    I am a disciplined and goal-oriented individual who prioritizes consistent learning and improvement. I regularly review my knowledge and share my projects on GitHub and my personal blog. I have worked with technologies such as Java Swing, MySQL, and Firebase, and I strive to make my applications more accessible and maintainable.
-                    
-                    My objective is to become a proficient developer in mobile and backend technologies by continuously improving my technical skills. As an aspiring software engineer who is solution-oriented and responsible, I aim to contribute to impactful and value-driven projects in the industry.
-                </p>
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="about-photo.jpg" alt="Aziz Karagülmez">
             </div>
+            <div class="about-content">
+                <h1 class="about-title">About</h1>
+                <div class="about-section">
+                    <p class="about-text">
+                        My name is Aziz Karagülmez, and I am currently a third-year Computer Engineering student. I focus on software development, particularly in Java-based desktop applications and mobile application development using Flutter. Throughout my academic journey, I have aimed to strengthen my theoretical knowledge through hands-on projects.
 
-        
+                        I am a disciplined and goal-oriented individual who prioritizes consistent learning and improvement. I regularly review my knowledge and share my projects on GitHub and my personal blog. I have worked with technologies such as Java Swing, MySQL, and Firebase, and I strive to make my applications more accessible and maintainable.
+                        
+                        My objective is to become a proficient developer in mobile and backend technologies by continuously improving my technical skills. As an aspiring software engineer who is solution-oriented and responsible, I aim to contribute to impactful and value-driven projects in the industry.
+                    </p>
+                </div>
 
-            <div class="about-section">
-                <h3>Areas of Interest</h3>
-                <p class="about-text">
-                    Mobile Application Development, Backend Development, Database Design (MySQL, Firebase), Clean Code Writing and Object-Oriented Programming (OOP), User Interface / User Experience (UI/UX) Design, Developing and Sharing Open-Source Projects, Boxing and Mental Focus Activities, Following Technology Blogs and Lifelong Learning.
-                </p>
-            </div>
+                <div class="about-section">
+                    <h3>Areas of Interest</h3>
+                    <p class="about-text">
+                        Mobile Application Development, Backend Development, Database Design (MySQL, Firebase), Clean Code Writing and Object-Oriented Programming (OOP), User Interface / User Experience (UI/UX) Design, Developing and Sharing Open-Source Projects, Boxing and Mental Focus Activities, Following Technology Blogs and Lifelong Learning.
+                    </p>
+                </div>
 
-            <div class="about-section">
-                <h3>Kişisel Bilgiler</h3>
-                <div class="personal-info">
-                    <div class="info-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Antalya, Türkiye</span>
-                    </div>
-                    <div class="info-item">
-                        <i class="fas fa-birthday-cake"></i>
-                        <span>1 June 2000</span>
+                <div class="about-section">
+                    <h3>Personal Information</h3>
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Antalya, Turkey</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-birthday-cake"></i>
+                            <span>1 June 2000</span>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-           
+        <div class="education-certificates">
+            <div class="timeline-section">
+                <h2>
+                    
+                    Education
+                </h2>
+                <div class="timeline">
+                    <div >
+                        <div class="timeline-date">2022 - Currently Enrolled</div>
+                        <div class="timeline-title">Computer Engineering</div>
+                        <div class="timeline-subtitle">
+                            <img src="logo.png" alt="SDU Logo" class="logo-img">
+                            Süleyman Demirel University
+                        </div>
+                        <div class="timeline-content">
+                            I am currently enrolled in my undergraduate studies in Computer Engineering. I am specializing in software development, particularly in Java-based desktop applications and mobile application development using Flutter.
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="timeline-section">
+                <h2>
+                    
+                    Certificates
+                </h2>
+                <div class="certificate-grid">
+                    <div class="certificate-item">
+                        <div class="certificate-title">Backend Web Development Path with Beginner to Advanced Java</div>
+                        <div class="certificate-issuer">
+                            <img src="https://global-uploads.webflow.com/6097e0eca1e87557da031fef/609859a191abe5d64b17fed3_Patika%20logo.png" alt="Patika Logo" style="width: 35px; height: 35px; object-fit: contain;">
+                            Patika
+                        </div>
+                        <div class="certificate-date">2025</div>
+                    </div>
+                    <div class="certificate-item">
+                        <div class="certificate-title">Backend Web Development Path with Intermediate to Advanced Java</div>
+                        <div class="certificate-issuer">
+                            <img src="https://global-uploads.webflow.com/6097e0eca1e87557da031fef/609859a191abe5d64b17fed3_Patika%20logo.png" alt="Patika Logo" style="width: 35px; height: 35px; object-fit: contain;">
+                            Patika
+                        </div>
+                        <div class="certificate-date">2025</div>
+                    </div>
+                    
+                </div>
+            </div>
         </div>
     </div>
 </body>

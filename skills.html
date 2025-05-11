@@ -1,590 +1,345 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yeteneklerim | Aziz Karagülmez</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Skills | Aziz Karagülmez</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <style>
-        /* Genel stiller */
-        body {
-            background-color: #111827;
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background: #0f172a;
             color: #f3f4f6;
             font-family: 'Poppins', sans-serif;
         }
-        
-        /* Header Stili */
-        .header {
-            padding: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #f3f4f6;
-            text-decoration: none;
-            background: linear-gradient(to right, #8b5cf6, #6366f1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .nav-link {
-            font-size: 1.1rem;
-            color: #d1d5db;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient(to right, #8b5cf6, #6366f1);
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-        
-        /* Ana İçerik */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            background: linear-gradient(to right, #8b5cf6, #6366f1);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            display: inline-block;
-        }
-        
-        .skills-intro {
-            margin-bottom: 3rem;
-            color: #d1d5db;
-            max-width: 800px;
-        }
-        
-        /* Yetenekler */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-        
-        .skill-card {
-            background-color: rgba(31, 41, 55, 0.5);
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(99, 102, 241, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .skill-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-            border-color: rgba(99, 102, 241, 0.3);
-        }
-        
-        .skill-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #f3f4f6;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-        
-        .skill-card h3::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 50px;
-            height: 2px;
-            background: linear-gradient(to right, #8b5cf6, #6366f1);
-        }
-        
-        .skill-item {
-            margin-bottom: 1.25rem;
-        }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 0.5rem;
-            color: #d1d5db;
-        }
-        
-        .skill-percentage {
-            color: #8b5cf6;
-        }
-        
-        .skill-bar {
-            height: 8px;
-            background-color: rgba(209, 213, 219, 0.1);
-            border-radius: 4px;
-            overflow: hidden;
-        }
-        
-        .skill-level {
-            height: 100%;
-            background: linear-gradient(to right, #8b5cf6, #6366f1);
-            border-radius: 4px;
-        }
-        
-        .tools-section {
-            margin-top: 4rem;
-        }
-        
-        .tools-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .tool-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            background-color: rgba(31, 41, 55, 0.5);
-            padding: 1rem;
-            border-radius: 0.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .tool-item:hover {
-            transform: translateY(-3px);
-        }
-        
-        .tool-icon {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(to right, #8b5cf6, #6366f1);
-            border-radius: 50%;
-            color: white;
-            font-size: 1.25rem;
-        }
-        
-        .tool-item span {
-            color: #d1d5db;
-        }
-        
-        /* Footer */
-        .footer {
-            margin-top: 4rem;
-            padding: 2rem;
-            text-align: center;
-            color: #d1d5db;
-            border-top: 1px solid rgba(99, 102, 241, 0.1);
-        }
-        
-        .footer-social {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        .social-icon {
-            color: #d1d5db;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icon:hover {
-            color: #6366f1;
-            transform: translateY(-3px);
-        }
-        
-        /* Arka Plan Animasyonu */
-        .background-animation {
+
+        .navbar {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
-            z-index: 1;
-            background: radial-gradient(circle at center, #1f2937 0%, #111827 70%);
-            overflow: hidden;
+            padding: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 3;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(10px);
         }
         
-        .background-animation::before {
+        .navbar nav ul {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .navbar nav ul li a {
+            color: #d1d5db;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+        
+        .navbar nav ul li a::after {
             content: '';
             position: absolute;
-            width: 200%;
-            height: 200%;
-            top: -50%;
-            left: -50%;
-            z-index: -1;
-            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%236366f1' fill-opacity='0.05'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            animation: backgroundMove 80s linear infinite;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background: linear-gradient(to right, #10b981, #059669);
+            transition: width 0.3s ease;
         }
         
-        @keyframes backgroundMove {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
+        .navbar nav ul li a:hover::after,
+        .navbar nav ul li a.active::after {
+            width: 100%;
         }
         
-        /* Responsive Tasarım */
+        .navbar nav ul li a:hover {
+            color: #f3f4f6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            padding-top: 100px;
+        }
+
+        .skills-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            background: linear-gradient(to right, #10b981, #059669);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            padding: 1rem;
+        }
+
+        .skill-category {
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .category-title {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: #10b981;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.8rem;
+        }
+
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(to right, #10b981, #059669);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            justify-items: center;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem;
+            background: rgba(15, 23, 42, 0.3);
+            border-radius: 0.8rem;
+            transition: all 0.3s ease;
+            width: 90px;
+            height: 90px;
+            justify-content: center;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(16, 185, 129, 0.1) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .skill-item:hover::before {
+            opacity: 1;
+        }
+
+        .skill-item:hover {
+            background: rgba(15, 23, 42, 0.6);
+            transform: translateY(-5px) scale(1.05);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover .skill-icon {
+            transform: rotate(360deg);
+        }
+
+        .skill-name {
+            font-size: 0.8rem;
+            color: #d1d5db;
+            text-align: center;
+            margin-top: 0.3rem;
+        }
+
+        @media (max-width: 1200px) {
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .header {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1.5rem;
+            .skills-container {
+                grid-template-columns: 1fr;
             }
             
-            .nav-links {
+            .navbar {
+                padding: 1rem;
+            }
+            
+            .navbar nav ul {
+                gap: 1.5rem;
                 flex-wrap: wrap;
                 justify-content: center;
             }
-            
-            .section-title {
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .skill-item {
+                width: 80px;
+                height: 80px;
+            }
+
+            .skill-icon {
                 font-size: 2rem;
-                text-align: center;
-                display: block;
-            }
-            
-            .skills-intro {
-                text-align: center;
-            }
-            
-            .skill-card h3 {
-                font-size: 1.3rem;
-            }
-            
-            .skill-card h3::after {
-                left: 50%;
-                transform: translateX(-50%);
             }
         }
     </style>
 </head>
 <body>
-    <div class="background-animation"></div>
-    
-    <header class="header">
-        <a href="index.html" class="logo">AZİZ KARAGÜLMEZ</a>
-        <nav class="nav-links">
-            <a href="index.html" class="nav-link">Ana Sayfa</a>
-            <a href="skills.html" class="nav-link active">Yetenekler</a>
-            <a href="projects.html" class="nav-link">Projeler</a>
-            <a href="contact.html" class="nav-link">İletişim</a>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="skills.html" class="active">Skills</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
         </nav>
     </header>
-    
-    <main class="container">
-        <h1 class="section-title">Yeteneklerim</h1>
+
+    <div class="container">
+        <h1 class="skills-title">Technical Skills</h1>
         
-        <div class="skills-intro">
-            <p>Bilgisayar mühendisliği alanında edindiğim çeşitli yetenekler ve teknolojiler ile sürekli kendimi geliştiriyorum. Aşağıda uzmanlık alanlarım ve kullandığım teknolojiler yer almaktadır.</p>
-        </div>
-        
-        <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Frontend Teknolojileri</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>HTML5 / CSS3</span>
-                        <span class="skill-percentage">95%</span>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h2 class="category-title">Programming Languages</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-java-plain colored"></i>
+                        <span class="skill-name">Java</span>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 95%"></div>
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-dart-plain colored"></i>
+                        <span class="skill-name">Dart</span>
                     </div>
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-javascript-plain colored"></i>
+                        <span class="skill-name">JavaScript</span>
+                    </div>
+                    
+                    
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>JavaScript (ES6+)</span>
-                        <span class="skill-percentage">90%</span>
+            </div>
+
+            <div class="skill-category">
+                <h2 class="category-title">Frameworks & Libraries</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-flutter-plain colored"></i>
+                        <span class="skill-name">Flutter</span>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 90%"></div>
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-spring-plain colored"></i>
+                        <span class="skill-name">Spring</span>
                     </div>
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-react-original colored"></i>
+                        <span class="skill-name">React Native</span>
+                    </div>
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-nodejs-plain colored"></i>
+                        <span class="skill-name">Node.js</span>
+                    </div>
+                    
                 </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>React.js</span>
-                        <span class="skill-percentage">85%</span>
+            </div>
+
+            <div class="skill-category">
+                <h2 class="category-title">Databases</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-mysql-plain colored"></i>
+                        <span class="skill-name">MySQL</span>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 85%"></div>
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-mongodb-plain colored"></i>
+                        <span class="skill-name">MongoDB</span>
                     </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Vue.js</span>
-                        <span class="skill-percentage">70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 70%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>SASS / SCSS</span>
-                        <span class="skill-percentage">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 80%"></div>
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-sqlite-plain colored"></i>
+                        <span class="skill-name">SQLite</span>
                     </div>
                 </div>
             </div>
-            
-            <div class="skill-card">
-                <h3>Backend Teknolojileri</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Node.js</span>
-                        <span class="skill-percentage">85%</span>
+
+            <div class="skill-category">
+                <h2 class="category-title">Tools & Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-git-plain colored"></i>
+                        <span class="skill-name">Git</span>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 85%"></div>
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-github-original colored"></i>
+                        <span class="skill-name">GitHub</span>
                     </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Express.js</span>
-                        <span class="skill-percentage">80%</span>
+                    <div class="skill-item">
+                        <i class="skill-icon devicon-docker-plain colored"></i>
+                        <span class="skill-name">Docker</span>
                     </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Python</span>
-                        <span class="skill-percentage">90%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 90%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Django</span>
-                        <span class="skill-percentage">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 75%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>PHP</span>
-                        <span class="skill-percentage">65%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 65%"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="skill-card">
-                <h3>Veritabanı Teknolojileri</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>MySQL</span>
-                        <span class="skill-percentage">85%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 85%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>MongoDB</span>
-                        <span class="skill-percentage">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>PostgreSQL</span>
-                        <span class="skill-percentage">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 75%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Firebase</span>
-                        <span class="skill-percentage">70%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 70%"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="skill-card">
-                <h3>Mobil Geliştirme</h3>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Flutter</span>
-                        <span class="skill-percentage">80%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 80%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>React Native</span>
-                        <span class="skill-percentage">75%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 75%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Android (Java)</span>
-                        <span class="skill-percentage">65%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 65%"></div>
-                    </div>
-                </div>
-                <div class="skill-item">
-                    <div class="skill-name">
-                        <span>Swift (iOS)</span>
-                        <span class="skill-percentage">50%</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-level" style="width: 50%"></div>
-                    </div>
+                    
+                    
                 </div>
             </div>
         </div>
+    </div>
+
+    <script>
+        const skillItems = document.querySelectorAll('.skill-item');
         
-        <section class="tools-section">
-            <h2 class="section-title">Diğer Araçlar ve Teknolojiler</h2>
-            <div class="tools-grid">
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fab fa-git-alt"></i>
-                    </div>
-                    <span>Git & GitHub</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fab fa-docker"></i>
-                    </div>
-                    <span>Docker</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fab fa-aws"></i>
-                    </div>
-                    <span>AWS</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fab fa-linux"></i>
-                    </div>
-                    <span>Linux</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fas fa-terminal"></i>
-                    </div>
-                    <span>Bash/Terminal</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fab fa-figma"></i>
-                    </div>
-                    <span>Figma</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <span>GraphQL</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fas fa-server"></i>
-                    </div>
-                    <span>RESTful API</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <span>Web Security</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fas fa-code-branch"></i>
-                    </div>
-                    <span>CI/CD</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <span>Machine Learning</span>
-                </div>
-                <div class="tool-item">
-                    <div class="tool-icon">
-                        <i class="fas fa-tachometer-alt"></i>
-                    </div>
-                    <span>Test Otomasyonu</span>
-                </div>
-            </div>
-        </section>
-    </main>
-    
-    <footer class="footer">
-        <div class="footer-social">
-            <a href="https://github.com/azizk" target="_blank" class="social-icon"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com/in/azizkaragulmez" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:aziz@example.com" class="social-icon"><i class="fas fa-envelope"></i></a>
-            <a href="https://instagram.com/azizkaragulmez" target="_blank" class="social-icon"><i class="fab fa-instagram"></i></a>
-        </div>
-        <p>&copy; 2023 Aziz Karagülmez | Tüm Hakları Saklıdır</p>
-    </footer>
-    
-    <script src="script.js"></script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.5 });
+
+        skillItems.forEach((item, index) => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = `all 0.5s ease ${index * 0.1}s`;
+            observer.observe(item);
+        });
+    </script>
 </body>
 </html> 
