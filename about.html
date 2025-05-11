@@ -88,7 +88,7 @@
         
         @media (max-width: 768px) {
             .navbar {
-                padding: 0.75rem 1rem;
+                padding: 0.5rem;
             }
             
             .navbar-container {
@@ -109,6 +109,7 @@
                 opacity: 1;
                 pointer-events: auto;
                 box-shadow: none;
+                gap: 0.25rem;
             }
             
             .menu-toggle {
@@ -120,8 +121,9 @@
             }
             
             .nav-link {
-                padding: 0.5rem 0.75rem;
+                padding: 0.25rem 0.5rem;
                 border-radius: 4px;
+                font-size: 0.85rem;
             }
         }
 
@@ -399,20 +401,42 @@
 
         @media (max-width: 768px) {
             .navbar {
-                padding: 0.75rem;
+                padding: 0.5rem;
             }
             
-            .navbar nav ul {
-                gap: 0.5rem;
-                flex-wrap: wrap;
+            .navbar-container {
                 justify-content: center;
-                padding: 0 0.5rem;
+                padding: 0;
             }
             
-            .navbar nav ul li a {
-                font-size: 0.85rem;
+            .nav-menu {
+                display: flex;
+                justify-content: center;
+                position: static;
+                background: none;
+                padding: 0;
+                margin: 0;
+                width: auto;
+                flex-direction: row;
+                transform: none;
+                opacity: 1;
+                pointer-events: auto;
+                box-shadow: none;
+                gap: 0.25rem;
+            }
+            
+            .menu-toggle {
+                display: none;
+            }
+            
+            .nav-item {
+                width: auto;
+            }
+            
+            .nav-link {
                 padding: 0.25rem 0.5rem;
-                white-space: nowrap;
+                border-radius: 4px;
+                font-size: 0.85rem;
             }
             
             .section-title {
