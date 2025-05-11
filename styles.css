@@ -100,11 +100,27 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 30px 50px;
     position: relative;
     z-index: 2;
+    width: 100%;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .logo {
@@ -510,7 +526,40 @@ footer {
 
 @media (max-width: 768px) {
     .navbar {
-        padding: 20px;
+        padding: 0.75rem 1rem;
+    }
+    
+    .navbar-container {
+        justify-content: center;
+        padding: 0;
+    }
+    
+    .nav-menu {
+        display: flex;
+        justify-content: center;
+        position: static;
+        background: none;
+        padding: 0;
+        margin: 0;
+        width: auto;
+        flex-direction: row;
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+        box-shadow: none;
+    }
+    
+    .menu-toggle {
+        display: none;
+    }
+    
+    .nav-item {
+        width: auto;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 0.75rem;
+        border-radius: 4px;
     }
     
     .footer-content {
