@@ -3,189 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aziz Karagülmez</title>
+    <title>Aziz Karagülmez | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body, html {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background: #0f172a;
-            color: #f3f4f6;
-            font-family: 'Poppins', sans-serif;
-            overflow: hidden;
-        }
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            top: 0;
-            left: 0;
-            background-color: #0f172a;
-        }
-        .hero-content {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 2;
-            width: 100%;
-            max-width: 1200px;
-            padding: 0 20px;
-        }
-        .profile-img {
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #10b981;
-            margin-bottom: 2rem;
-            box-shadow: 0 0 20px rgba(16, 185, 129, 0.3);
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #10b981, #059669);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        .hero-desc {
-            font-size: 1.5rem;
-            color: #d1d5db;
-            margin-bottom: 2rem;
-        }
-        .hero-socials {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .hero-socials a {
-            color: #d1d5db;
-            font-size: 2rem;
-            transition: all 0.3s ease;
-        }
-        .hero-socials a:hover {
-            color: #10b981;
-            transform: translateY(-3px);
-        }
-        
-        /* Navbar Styles */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(12px);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-            z-index: 1000;
-            padding: 0.85rem 2rem;
-        }
-        
-        .navbar-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 1rem;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            gap: 1.5rem;
-        }
-        
-        .nav-item {
-            position: relative;
-        }
-        
-        .nav-link {
-            color: #d1d5db;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            padding: 0.5rem 0.75rem;
-            border-radius: 4px;
-        }
-        
-        .nav-link.active {
-            color: #10b981;
-            background-color: rgba(16, 185, 129, 0.1);
-        }
-        
-        .nav-link:hover {
-            color: #f3f4f6;
-        }
-        
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: #d1d5db;
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.25rem;
-        }
-        
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 0.5rem;
-            }
-            
-            .navbar-container {
-                justify-content: center;
-                padding: 0;
-            }
-            
-            .nav-menu {
-                display: flex;
-                justify-content: center;
-                position: static;
-                background: none;
-                padding: 0;
-                margin: 0;
-                width: auto;
-                flex-direction: row;
-                transform: none;
-                opacity: 1;
-                pointer-events: auto;
-                box-shadow: none;
-                gap: 0.25rem;
-            }
-            
-            .menu-toggle {
-                display: none;
-            }
-            
-            .nav-item {
-                width: auto;
-            }
-            
-            .nav-link {
-                padding: 0.25rem 0.5rem;
-                border-radius: 4px;
-                font-size: 0.85rem;
-            }
-        }
-        
-
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="particles-js"></div>
+    <div class="background-animation"></div>
     
     <header class="navbar">
         <div class="navbar-container">
@@ -193,135 +17,452 @@
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-menu" id="navMenu">
-                <li class="nav-item">
-                    <a href="index.html" class="nav-link active">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="skills.html" class="nav-link">Skills</a>
-                </li>
-                <li class="nav-item">
-                    <a href="projects.html" class="nav-link">Projects</a>
-                </li>
-                <li class="nav-item">
-                    <a href="contact.html" class="nav-link">Contact</a>
-                </li>
+                <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </header>
     
-    <div class="hero-content">
-        <img src="profile.jpg" alt="Aziz Karagülmez" class="profile-img">
-        <h1 class="hero-title">Aziz Karagülmez</h1>
-        <div class="hero-desc">Computer Engineer & Developer</div>
-        <div class="hero-socials">
-            <a href="https://github.com/azizkaragulmez" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/aziz-karag%C3%BClmez-612762199/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:azizkaragulmez07@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://instagram.com/krglmzzz" target="_blank"><i class="fab fa-instagram"></i></a>
+    <!-- Home Section -->
+    <section id="home" class="hero-section">
+        <div id="particles-js"></div>
+        <div class="hero-content">
+            <img src="profile.jpg" alt="Aziz Karagülmez" class="profile-img">
+            <h1 class="hero-title">Aziz Karagülmez</h1>
+            <div class="hero-desc">Computer Engineer & Developer</div>
+            <div class="hero-socials">
+                <a href="https://github.com/azizkaragulmez" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/aziz-karag%C3%BClmez-612762199/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:azizkaragulmez07@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://instagram.com/krglmzzz" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h1 class="section-title">About Me</h1>
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="about-photo.jpg" alt="Aziz Karagülmez">
+                </div>
+                <div class="about-content">
+                    <div class="about-section-part">
+                        <p class="about-text">
+                            My name is Aziz Karagülmez, and I am a Computer Engineering student focused on full-stack software development. I primarily work with Java (Spring Boot) for backend development and Flutter for building mobile applications, developing scalable and production-oriented solutions.
+                        </p>
+                        <p class="about-text">
+                            Throughout my projects, I have gained hands-on experience in designing RESTful APIs, implementing secure authentication mechanisms, and integrating mobile applications with backend services. I also have experience with CI/CD processes using GitHub Actions and containerization with Docker.
+                        </p>
+                        <p class="about-text">
+                            I am a disciplined and goal-oriented developer who values continuous learning. I regularly improve my skills through real-world projects and share my work on GitHub and my personal portfolio.
+                        </p>
+                        <p class="about-text">
+                            My goal is to become a proficient developer in backend and mobile technologies and contribute to impactful, production-level software systems.
+                        </p>
+                    </div>
+
+                    <div class="about-section-part">
+                        <h3>Areas of Interest</h3>
+                        <p class="about-text">
+                            Backend Development (Spring Boot), Mobile Application Development (Flutter), RESTful API Design, Database Systems (PostgreSQL, MySQL, Firebase), CI/CD & DevOps (Docker, GitHub Actions), Clean Code & OOP, Continuous Learning & Open-Source Projects
+                        </p>
+                    </div>
+
+                    <div class="about-section-part">
+                        <h3>Personal Information</h3>
+                        <div class="personal-info">
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Antalya, Turkey</span>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-birthday-cake"></i>
+                                <span>1 June 2000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="education-certificates">
+                <div class="timeline-section">
+                    <h2>Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-date">2022 - Currently Enrolled</div>
+                            <div class="timeline-title">Computer Engineering</div>
+                            <div class="timeline-subtitle">
+                                <i class="fas fa-university" style="color: #10b981; margin-right: 5px;"></i>
+                                Süleyman Demirel University
+                            </div>
+                            <div class="timeline-content">
+                                I am currently enrolled in my undergraduate studies in Computer Engineering. I am specializing in software development, particularly in Java-based desktop applications and mobile application development using Flutter.
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Graduated</div>
+                            <div class="timeline-title">Computer Programming</div>
+                            <div class="timeline-subtitle">
+                                <i class="fas fa-university" style="color: #10b981; margin-right: 5px;"></i>
+                                Mehmet Akif Ersoy University
+                            </div>
+                            <div class="timeline-content">
+                                I completed my associate degree in Computer Programming, where I gained a solid foundation in software development and database management.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-section">
+                    <h2>Certificates</h2>
+                    <div class="certificate-grid">
+                        <div class="certificate-item">
+                            <div class="certificate-title">Backend Web Development Path with Beginner to Advanced Java</div>
+                            <div class="certificate-issuer">
+                                <img src="https://global-uploads.webflow.com/6097e0eca1e87557da031fef/609859a191abe5d64b17fed3_Patika%20logo.png" alt="Patika Logo" style="width: 35px; height: 35px; object-fit: contain;">
+                                Patika
+                            </div>
+                            <div class="certificate-date">2024</div>
+                        </div>
+                        <div class="certificate-item">
+                            <div class="certificate-title">Backend Web Development Path with Intermediate to Advanced Java</div>
+                            <div class="certificate-issuer">
+                                <img src="https://global-uploads.webflow.com/6097e0eca1e87557da031fef/609859a191abe5d64b17fed3_Patika%20logo.png" alt="Patika Logo" style="width: 35px; height: 35px; object-fit: contain;">
+                                Patika
+                            </div>
+                            <div class="certificate-date">2024</div>
+                        </div>
+                        <div class="certificate-item">
+                            <div class="certificate-title">Spring Core | Spring Rest API | Spring Data JPA | Spring Validation | JUnit5 | Spring Security + JWT | Spring Pagination Java Kursu</div>
+                            <div class="certificate-issuer">
+                                <img src="https://img.icons8.com/color/48/udemy.png" alt="Udemy Logo" style="width: 35px; height: 35px; object-fit: contain;">
+                                Udemy - Enes Bayram
+                            </div>
+                            <div class="certificate-date">2025</div>
+                        </div>
+                        <div class="certificate-item">
+                            <div class="certificate-title">Flutter ile Uygulama Geliştirme Kursu | Android & iOS</div>
+                            <div class="certificate-issuer">
+                                <img src="https://img.icons8.com/color/48/udemy.png" alt="Udemy Logo" style="width: 35px; height: 35px; object-fit: contain;">
+                                Udemy - Kasım Adalan
+                            </div>
+                            <div class="certificate-date">2025</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h1 class="section-title">Technical Skills</h1>
+            
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h2 class="category-title">Programming Languages</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-java-plain colored"></i>
+                            <span class="skill-name">Java</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-dart-plain colored"></i>
+                            <span class="skill-name">Dart</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-azuresqldatabase-plain colored"></i>
+                            <span class="skill-name">SQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h2 class="category-title">Mobile Development</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-flutter-plain colored"></i>
+                            <span class="skill-name">Flutter</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h2 class="category-title">Backend Development</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-spring-plain colored"></i>
+                            <span class="skill-name">Spring Boot</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h2 class="category-title">Frontend</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-html5-plain colored"></i>
+                            <span class="skill-name">HTML5</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-css3-plain colored"></i>
+                            <span class="skill-name">CSS3</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-javascript-plain colored"></i>
+                            <span class="skill-name">JavaScript</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-react-original colored"></i>
+                            <span class="skill-name">React</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h2 class="category-title">Databases</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-postgresql-plain colored"></i>
+                            <span class="skill-name">PostgreSQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-mysql-plain colored"></i>
+                            <span class="skill-name">MySQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-firebase-plain colored"></i>
+                            <span class="skill-name">Firebase</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h2 class="category-title">DevOps & Tools</h2>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-docker-plain colored"></i>
+                            <span class="skill-name">Docker</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-git-plain colored"></i>
+                            <span class="skill-name">Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-github-original colored"></i>
+                            <span class="skill-name">GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-postman-plain colored"></i>
+                            <span class="skill-name">Postman</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon fas fa-robot" style="color: #2088FF;"></i>
+                            <span class="skill-name">GitHub Actions</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="skill-icon devicon-linux-plain colored"></i>
+                            <span class="skill-name">Linux</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h1 class="section-title">My Projects</h1>
+            
+            <div class="projects-intro">
+                <p>Here are some of the projects I've worked on. Each project represents a unique challenge and learning experience in my development journey.</p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">English Vocabulary Learning Mobile App (Lingrow)</h3>
+                        <p class="project-description">
+                            <strong>Full-Stack Developer</strong><br>
+                            • Developed a scalable full-stack application including vocabulary learning, quiz, and listening modules.<br>
+                            • Built backend services and integrated mobile application with database systems.<br>
+                            • Implemented AI-based features for personalized learning experience.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Spring Boot</span>
+                            <span class="project-tag">PostgreSQL</span>
+                            <span class="project-tag">AI</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/azizkaragulmez/lingrow-backend" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Backend (Private)
+                            </a>
+                            <a href="https://github.com/azizkaragulmez/lingrow" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> Frontend (Private)
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Randevus – Appointment Management Mobile App</h3>
+                        <p class="project-description">
+                            <strong>Full-Stack Developer</strong><br>
+                            • Developed a mobile application for appointment creation and calendar management.<br>
+                            • Managed user authentication and real-time data handling.<br>
+                            • Deployed the application to Google Play Store in a production environment.
+                        </p>
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Firebase</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/azizkaragulmez/randevus" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">SafeWay AI</h3>
+                        <p class="project-description">Safeway AI is an AI-powered mobile app designed to improve driver safety by monitoring behaviors and identifying risks such as drowsiness, fatigue, and distraction. It provides real-time alerts and post-drive performance reports to help improve driving habits, making it ideal for individual drivers.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">React Native</span>
+                            <span class="project-tag">Node JS</span>
+                            <span class="project-tag">Tensorflow</span>
+                            <span class="project-tag">MongoDB</span>
+                            <span class="project-tag">Docker</span>
+                            <span class="project-tag">Kubernetes</span>
+                            <span class="project-tag">CI/CD</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="#" class="project-link"><i class="fab fa-github"></i> PRIVATE</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Customer-Registration-Project</h3>
+                        <p class="project-description">A desktop application for vehicle tracking automation, developed using Java Swing and MySQL. Allows users to register and manage vehicle information efficiently</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Java (swing)</span>
+                            <span class="project-tag">MySQL</span>
+                            <span class="project-tag">JDBC</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/azizkaragulmez/Customer-Registration-Project.git" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">My-Personal-Website</h3>
+                        <p class="project-description">This portfolio website you are currently viewing has been developed using modern frontend technologies and has a fully responsive design.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://github.com/azizk/portfolio-website" target="_blank" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-content">
+                        <h3 class="project-title">Antalya Boyasız Göçük Düzeltme Website</h3>
+                        <p class="project-description">This is the first real-world project I delivered as a developer. It was built using modern frontend technologies with a focus on clean design, responsiveness, and user experience. More than just a website, this project represents the starting point of my professional journey in web development.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">HTML5</span>
+                            <span class="project-tag">CSS3</span>
+                            <span class="project-tag">JavaScript</span>
+                        </div>
+                        <div class="project-links">
+                            <a href="https://xn--antalyaboyaszgocukduzeltme-55d.com/" target="_blank" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> View Website
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="contact-intro">
+                <h1 class="section-title">Contact</h1>
+                <p>You can use the following contact methods to contribute to projects, collaborate, or get in touch with me.</p>
+            </div>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>Email</h3>
+                    <p>My email address for job offers and collaborations</p>
+                    <a href="mailto:azizkaragulmez07@gmail.com" class="contact-link">
+                        <i class="fas fa-arrow-right"></i> azizkaragulmez07@gmail.com
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Telefon</h3>
+                    <p>In case of emergency you can reach us by phone.</p>
+                    <a href="tel:+90539945****" class="contact-link">
+                        <i class="fas fa-arrow-right"></i> +90 539 945 ** **
+                    </a>
+                </div>
+            </div>
+
+            <div class="social-section">
+                <h2>Social Media</h2>
+                <div class="social-grid">
+                    <a href="https://github.com/azizkaragulmez" class="social-item" target="_blank">
+                        <i class="fab fa-github social-icon"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aziz-karag%C3%BClmez-612762199/" class="social-item" target="_blank">
+                        <i class="fab fa-linkedin social-icon"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.instagram.com/krglmzzz/" class="social-item" target="_blank">
+                        <i class="fab fa-instagram social-icon"></i>
+                        <span>Instagram</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Aziz Karagülmez | Tüm Hakları Saklıdır</p>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS('particles-js',
-        {
-            "particles": {
-                "number": {
-                    "value": 80,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#10b981"
-                },
-                "shape": {
-                    "type": "circle"
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false
-                },
-                "size": {
-                    "value": 3,
-                    "random": true
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#10b981",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 2,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": true,
-                        "mode": "grab"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 140,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    }
-                }
-            },
-            "retina_detect": true
-        });
-        
-        // Mobile menu toggle functionality
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
-        
-        menuToggle.addEventListener('click', () => {
-            navMenu.classList.toggle('active');
-            
-            // Change icon based on menu state
-            const icon = menuToggle.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!event.target.closest('.navbar') && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                const icon = menuToggle.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-    </script>
+    <script src="script.js"></script>
 </body>
-</html> 
+</html>
